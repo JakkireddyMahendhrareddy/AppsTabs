@@ -303,16 +303,16 @@ const AppStore = () => {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gray-300 pt-5 pb-5 h-full">
+    <div className="flex flex-col justify-center items-center h-screen bg-gray-300 pt-5 pb-5">
       <h1 className="text-2xl font-bold text-red mb-4">App Store</h1>
       <input
         type="text"
         value={search}
-        className="px-5 py-3 border border-gray-300 rounded-lg mb-4 shadow-md"
+        className="px-5 py-3 border border-gray-300 rounded-lg mb-4 shadow-md w-full sm:w-1/2"
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search Apps"
       />
-      <div className="flex flex-row justify-center items-center space-x-4 mb-6">
+      <div className="flex flex-wrap justify-center items-center gap-2 mb-6">
         {tabsList.map((tabItem) => (
           <TabItem
             key={tabItem.tabId}
@@ -322,7 +322,7 @@ const AppStore = () => {
           />
         ))}
       </div>
-      <div className="grid grid-cols-4 gap-4 p-4 w-1/2 max-w-screen-lg">
+      <div className="grid grid-cols-2 gap-4 p-4 w-full sm:grid-cols-3 lg:grid-cols-4 max-w-screen-lg">
         {filteredApps.map((appItem) => (
           <AppItem key={appItem.appId} appDetails={appItem} />
         ))}
